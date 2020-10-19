@@ -15,12 +15,74 @@
         <article>
         <h2>O que é Git?</h2>
         <p>Se você é igual eu e caiu de paraquedas dentro do mundo de Git, saiba que a imagem transparecida de bicho papão é uma grande farsa! A realidade é que o git e todas as suas ferramentas merecem ser estudadas com atenção e dedicação, pois caso o contrário, você pode se perder completamente! </p>
-        <img src="" alt="">
+        <img class="lado" src="estilos/imagens/002.png" alt="">
         <h3>O que é git de fato?</h3>
         <p>O git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software. O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do sistema operacional Linux!</p>
         <p>Diferente de outros sistemas de controle em versão centralizada, como SVN e CVS, o Git é distribuído: todo desenvolvedor tem o histórico completo de seu repositório de códigos no local.</p>
+        <p>Você deve estar se perguntando "Mas quais são as vantagens?", bem vamos te explicar: </p>
+        <p>* Controle de histórico; <br>
+            * É seguro; <br>
+            * Trabalho em equipe dividido; <br>
+            * É possível ramificar os projetos; <br>
+        </p>
+        <p>Legal, né?! Continua lendo, pois vamos mostrar alguns comandos essenciais para você começar a usar o seu Git!</p>
         <img class="lado" src="estilos/imagens/git.png" alt="">
-
+        <h3>Git Init</h3>
+        <p>O `git init` é um comando utilizado para iniciar um novo repositório ou um que já tenha existência. <br> Existe também opções que podem seguir junto com o `git init`, que são eles:
+        <p>`git init [-q | --quiet] [--bare] [--template = <template_directory>] [--separate-git-dir <git dir>] [--object-format = <format>][-b <branch-name> | --initial-branch = <branch-name>] [--shared [= <permissões>]] [diretório]`</p>
+        <h3>Git Clone</h3>
+        <p>O `git clone` cria uma cópia de trabalho em um repositório local executando o comando `git clone /caminho/para/o/repositório` <br> mas quando for usar um repositório remoto, seu comando será `git clone usuário@servidor: /caminho/para/o/repositório`</p>
+        <h3>Git add</h3>
+        <p>Usado para adicionar conteúdo do arquivo ao índice. <br> Existe também opções que podem seguir junto com o `git add`, que são:</p>
+        <p>`
+            git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+            [--edit | -e] [- [não-] todos | - [no-] ignorar-remoção | [--update | -você]]
+            [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
+            [--chmod = (+ | -) x] [--pathspec-from-file = <file> [--pathspec-file-nul]]
+            [-] [<pathspec>…]
+                `
+        </p>
+        <h3>Git Commit</h3>
+        <p>É usado para gravar as alterações feito dentro do repositório local. <br> Existe também opções que podem seguir junto com o `git commit`, que são eles:</p>
+        <p>`
+            git commit [-a | --interactive | --patch] [-s] [-v] [-u<modo>] [--amend] [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+                [-F <arquivo> | -m <msg>] [--reset-author] [--allow-empty]
+                [--allow-empty-message] [--no-verify] [-e] [--author=<autor>]
+                [--date=<data>] [--cleanup=<modo>] [--[no-]status]
+                [-i | -o] [--pathspec-from-file=<arquivo> [--pathspec-file-nul]]
+                [-S[<keyid>]] [--] [<pathspec>…​]`
+        </p>
+        <h3>Git Push</h3>
+        <p>Esse comando atualiza o seu repositório remoto com base nas atualizações do seu repositório local, ou seja, ele manda todas as configurações e comandos que você executou dentro da máquina. <br> Existe também opções que podem seguir junto com o `git push`, que são:</p>
+        <p>`
+                git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=<git-receive-pack>]
+                [--repo=<repositório>] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
+                [-u | --set-upstream] [-o <texto> | --push-option=<texto>]
+                [--[no-]signed|--signed=(true|false|if-asked)]
+                [--force-with-lease[=<refname>[:<expect>]]]
+                [--no-verify] [<repositório> [<refspec>…​]]
+                `
+        </p>
+        <h3>Git Status</h3>
+        <p>
+            Esse comando mostra a condição de como se encontra a sua área de trabalho, exibindo assim, os caminhos e as diferenças. <br> Nesse comando, também existe opções que podem se seguir junto com o `git status`, são eles: </p>
+            <p>`git status [<opções>…​] [--] [<pathspec>…​]`</p>
+        <h3>Git Merge e o Git Branch
+        </h3>
+        <p>Antes de explicar o que é um Merge, é necessário entender o que é um Branch, ou melhor, entender o que é uma ramificação.</p>
+        <p>Quando se inicia um novo projeto no git, você tem um caminho que já está criado e que sempre consideramos ele como principal, o Master. Ele será a sua última versão do projeto.</p>
+        <p>Mas trabalhando em grupo (ou até mesmo sozinho), deve pensar na separação de setores, como: design, conteúdo, estrutura, entre outros. Assim, a sua árvore de trabalho terá uma estrutura mais profissional e organizada!</p>
+        <p>O merge aparece após essa criação de ramos, é esse comando que fará a junção com todos eles, apresentando o Master Final</p>
+        <p>Nesse comando, existe opções que podem se seguir junto com o `git merge`, são eles: </p>
+        <p>`git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
+            [--no-verify] [-s <estratégia>] [-X <opção-da-estratégia>] [-S[<keyid>]]
+            [--[no-]allow-unrelated-histories]
+            [--[no-]rerere-autoupdate] [-m <msg>] [-F <arquivo>] [<commit>…​]
+        git merge (--continue | --abort | --quit)`</p>
+        <h3>Git Pull</h3>
+        <p>Com esse comando você consegue integrar as suas alterações em um outro repositório ou em outro ramo local. Basta utilizar esse comando:</p>
+        <p>`git pull [<opções>] [<repositório> [<refspec>…​]]`</p>
+        
     </header>
         </main>
 </body>
